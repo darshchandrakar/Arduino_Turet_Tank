@@ -41,20 +41,22 @@ void loop()
   digitalWrite(7, HIGH);
   digitalWrite(11, LOW);
   digitalWrite(10, LOW);
-
+  // readiing the pot 1 value
   Pot = analogRead(A1);
   Out = map(Pot, 0, 1023, 0, 180);
+  // writing to the output varible which will controll the servo 1
   servo_6.write(Out);
 
+  // reading the button value 
   but = digitalRead(4);
   if (but == 1) {
     servo_3.write(90);
   } else {
     servo_3.write(0);
   }
-
+  //reading the pot 2 value
   Pot = analogRead(A0);
   Out = map(Pot, 0, 1023, 0, 180);
+  // writing the output varible which will controll the servo 3
   servo_5.write(Out);
-  delay(10); // Delay a little bit to improve simulation performance
 }
